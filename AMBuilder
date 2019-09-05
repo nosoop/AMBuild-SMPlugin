@@ -1,0 +1,24 @@
+# vim: set sts=2 ts=8 sw=2 tw=99 et ft=python:
+import os, sys
+
+builder.SetBuildFolder('plugins')
+
+# Add your main SourcePawn scripts here.
+# These should be specified relative to the 'scripting' directory.
+plugins = [
+  
+]
+
+###############
+# Make sure to edit PackageScript, which copies your files to their appropriate locations
+# Simple plugin projects do not need to modify past this point.
+
+for script_file in plugins:
+  script_file_dir, script_basename = os.path.split(script_file)
+  script_path = os.path.join(builder.currentSourcePath, 'scripting', script_file)
+  
+  # use same directory structure in output
+  smx_file = os.path.splitext(script_file)[0] + '.smx'
+  
+  cmd_entry, (smx_entry,) = SourcePawn.Plugin(builder, script_path, smx_file)
+  SourcePawn.plugins[script_path] = smx_entry
