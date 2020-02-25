@@ -1,6 +1,12 @@
-# AMBuild Project for SourceMod Plugins
+# AMBuild Project Template for SourceMod Plugins
+
+> **Note:** This project has been deprecated in favor of [nosoop/NinjaBuild-SMPlugin].
+> 
+> AMBuild API's support for non-C++ tooling is rather lacking.
 
 A project repository template that builds SourceMod plugins with `ambuild`.
+
+[nosoop/NinjaBuild-SMPlugin]: https://github.com/nosoop/NinjaBuild-SMPlugin
 
 ## Usage
 
